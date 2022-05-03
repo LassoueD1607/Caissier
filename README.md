@@ -1,3 +1,3 @@
-Spring Boot 
-Angular
-Jetpack Compose Kotlin
+Spring Boot -
+Angular -
+Jetpack Compose - Kotlin
