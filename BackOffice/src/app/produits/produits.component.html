@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+                <label><b>Categories </b></label>
+                <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="idCategorie"
+                    (change)="onChange()">
+                    <option value="All" >All</option>
+                    <option value="Alimentaire">Alimentaire</option>
+                    <option value="Cosmetique">Cosmetique</option>
+                    <option value="Viande">Viande</option>
+
+                </select>
+            </div>
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                      
+                        <th>Id</th>
+                        <th>Image</th>
+                        <th>Code a Barre</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Categorie</th>
+                        <th>Quantite</th>
+                        <th rowspan="2" style="text-align: right;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let produit of produits">
+                    <tr>
+                        <td>{{produit.idProduit}}</td>
+
+                        <td><img style="border-radius: 50%;" [src]="produit.imageURL" width="120px" height="120px" alt=""></td>
+                        <td>{{produit.codeABarre}}</td>
+
+                        <td>{{produit.nomProduit}}</td>
+                        <td>{{produit.prix}}</td>
+                        <td>{{produit.categorie}}</td>
+                        <td>{{produit.qteStock}}</td>
+                        
+
+                        <td><a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a>
+                        </td>
+                        <!--le click sur modifier va nous ramene à une autre page /updateProduit avec un autre attribut qui est le id du produit-->
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

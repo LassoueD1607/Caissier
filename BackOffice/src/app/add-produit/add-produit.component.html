@@ -1,0 +1,67 @@
+<div class="container" style="padding: 20px;">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div>
+                <h2>Ajouter un Produit :</h2>
+            </div >
+            <form>
+
+            
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <label>Code A Barre</label>
+                    <input type="text" [(ngModel)]="newProduit.codeABarre" name="codeABarre" class="form-control"
+                        placeholder="6190000010">
+                        
+                        
+                        
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <label>Nom Produit</label>
+                    <input type="text" [(ngModel)]="newProduit.nomProduit" name="nomProduit" class="form-control">
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <label>Prix</label>
+                    <input type="number" [(ngModel)]="newProduit.prix" name="prix" class="form-control"
+                        required>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <label>Categorie</label>
+                    <select class="form-control form-control-lg" id="idCat" name="idCat"
+                        [(ngModel)]="newProduit.categorie" >
+
+                        <option value="Alimentaire">Alimentaire</option>
+                        <option value="Viande">Viande</option>
+                        <option value="Viande">Viande</option>
+
+
+                    </select>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <label>Quantité</label>
+                    <input type="number" [(ngModel)]="newProduit.qteStock" name="qteStock" class="form-control"
+                        required>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <label>ImageURL</label>
+                    <input type="text" [(ngModel)]="newProduit.imageURL" name="codeABarre" class="form-control"
+                        required>
+                </div>
+                
+
+
+
+                <div class="mt-2">
+                    <button type="submit" (click)="addProduit()" class="btn btn-success">Ajouter</button>
+                    <div>
+                        <h3 style="color:green;">{{message}}</h3>
+                    </div>
+                    <div>
+                        <h3 style="color:red;">{{warning}}</h3>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
